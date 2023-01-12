@@ -6,6 +6,8 @@
  * Start Phaser game
  */
 
+import SplashScene from "./splashScene.js";
+
 const config = {
   type: Phaser.AUTO,
   width: 1920,
@@ -26,3 +28,10 @@ const config = {
 };
 
 const game = new Phaser.Game(config);
+
+// load scene
+// Note: Any "key" is global and can't be reused
+game.scene.add("splashScene", splashScene);
+
+// Game Start
+game.scene.start("splashScene");
