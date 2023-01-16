@@ -6,8 +6,8 @@
  * Start Phaser game
  */
 
-import splashScene from "./splashScene.js";
-import titleScene from "./splashScene.js";
+import SplashScene from "./splashScene.js";
+import TitleScene from "./titleScene.js";
 
 //Game Scenes
 const splashScene = new SplashScene();
