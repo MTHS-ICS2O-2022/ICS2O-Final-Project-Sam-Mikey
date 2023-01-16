@@ -6,7 +6,12 @@
  * Start Phaser game
  */
 
-import SplashScene from "./splashScene.js";
+import splashScene from "./splashScene.js";
+import titleScene from "./splashScene.js";
+
+//Game Scenes
+const splashScene = new SplashScene();
+const titleScene = new TitleScene();
 
 const config = {
   type: Phaser.AUTO,
@@ -15,7 +20,7 @@ const config = {
   physics: {
     default: "arcade",
     arcade: {
-      debug: true,
+      debug: false,
     },
   },
   //set background color
@@ -32,6 +37,7 @@ const game = new Phaser.Game(config);
 // load scene
 // Note: Any "key" is global and can't be reused
 game.scene.add("splashScene", splashScene);
+game.scene.add("titleScene", titleScene);
 
 // Game Start
 game.scene.start("splashScene");
