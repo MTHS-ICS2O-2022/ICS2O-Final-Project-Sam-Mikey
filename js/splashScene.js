@@ -19,11 +19,11 @@ class SplashScene extends Phaser.Scene {
   }
 
   create(data) {
-    this.splasSceneBackgroundImage = this.add
+    this.splashSceneBackgroundImage = this.add
       .sprite(1000, 500, "splashSceneBackground")
       .setScale(2.75);
-    this.splasSceneBackgroundImage.x = 1920 / 2;
-    this.splasSceneBackgroundImage.y = 1080 / 2;
+    this.splashSceneBackgroundImage.x = 1920 / 2;
+    this.splashSceneBackgroundImage.y = 1080 / 2;
   }
 
   update(time, delta) {
