@@ -6,7 +6,7 @@
  * Start Phaser game
  */
 
-import splashScene from "./splashScene.js"
+import splashScene from "./splashScene.js";
 
 const config = {
   type: Phaser.AUTO,
