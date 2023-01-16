@@ -6,7 +6,7 @@
  * Start Phaser game
  */
 
-import SplashScene from "./splashScene.js";
+import splashScene from "./splashScene.js"
 
 const config = {
   type: Phaser.AUTO,
@@ -15,7 +15,7 @@ const config = {
   physics: {
     default: "arcade",
     arcade: {
-      debug: true,
+      debug: false,
     },
   },
   //set background color
