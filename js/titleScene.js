@@ -2,11 +2,11 @@
 
 // Created by Mikey Gloriani
 // Created on January 12 2023
-// This is the splash scene
+// This is the title scene
 
-class SplashScene extends Phaser.Scene {
+class TitleScene extends Phaser.Scene {
   constructor() {
-    super({ key: "splashScene" });
+    super({ key: "titleScene" });
 
     this.titleSceneBackgroundImage = null;
     this.titleSceneText = null;
