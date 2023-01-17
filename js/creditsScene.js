@@ -30,17 +30,11 @@ class CreditsScene extends Phaser.Scene {
       "creditSceneBackground",
       "./assets/creditSceneBackground.png"
     );
-    
-    this.load.image(
-      "backGUIButton",
-      "./assets/backGUIButton.png"
-    );
+
+    this.load.image("backGUIButton", "./assets/backGUIButton.png");
 
     //sounds
-    this.load.audio(
-      "guiBack",
-      "./assets/guiBack.mp3"
-    );
+    this.load.audio("guiBack", "./assets/guiBack.mp3");
   }
 
   create(data) {
@@ -55,9 +49,13 @@ class CreditsScene extends Phaser.Scene {
       1080 / 2 - 250,
       "Insert Text Here",
       this.creditsSceneTextStyle
-    )
+    );
 
-    this.backGUIButton = this.add.sprite(600 / 2, 1080 / 2 + 400, "backGUIButton");
+    this.backGUIButton = this.add.sprite(
+      600 / 2,
+      1080 / 2 + 400,
+      "backGUIButton"
+    );
     this.backGUIButton.setInteractive({ useHandCursor: true });
     this.backGUIButton.on("pointerdown", () => this.clickBack());
   }
@@ -67,7 +65,7 @@ class CreditsScene extends Phaser.Scene {
   clickBack() {
     this.sound.play("guiBack");
     this.scene.start("menuScene");
-  }   
+  }
 }
 
 export default CreditsScene;

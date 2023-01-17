@@ -27,26 +27,14 @@ class MenuScene extends Phaser.Scene {
     console.log("Menu Scene");
 
     //images
-    this.load.image(
-      "menuSceneBackground",
-      "./assets/menuSceneBackground.jpg"
-    );
-    
-    this.load.image(
-      "playGUIButton",
-      "./assets/playGUIButton.png"
-    );
-    
-    this.load.image(
-      "creditsGUIButton",
-      "./assets/creditsGUIButton.png"
-    );
+    this.load.image("menuSceneBackground", "./assets/menuSceneBackground.jpg");
+
+    this.load.image("playGUIButton", "./assets/playGUIButton.png");
+
+    this.load.image("creditsGUIButton", "./assets/creditsGUIButton.png");
 
     //sounds
-    this.load.audio(
-      "guiSelect",
-      "./assets/guiSelect.mp3"
-    );
+    this.load.audio("guiSelect", "./assets/guiSelect.mp3");
   }
 
   create(data) {
@@ -61,14 +49,21 @@ class MenuScene extends Phaser.Scene {
       1080 / 2 - 250,
       "Andromedaroids",
       this.menuSceneTextStyle
-    )
+    );
 
-    this.playGUIButton = this.add.sprite(1920 / 2, 1080 / 2 + 50, "playGUIButton");
+    this.playGUIButton = this.add.sprite(
+      1920 / 2,
+      1080 / 2 + 50,
+      "playGUIButton"
+    );
     this.playGUIButton.setInteractive({ useHandCursor: true });
     this.playGUIButton.on("pointerdown", () => this.clickPlay());
 
-
-    this.creditsGUIButton = this.add.sprite(1920 / 2, 1080 / 2 + 300, "creditsGUIButton");
+    this.creditsGUIButton = this.add.sprite(
+      1920 / 2,
+      1080 / 2 + 300,
+      "creditsGUIButton"
+    );
     this.creditsGUIButton.setInteractive({ useHandCursor: true });
     this.creditsGUIButton.on("pointerdown", () => this.clickCredits());
   }
@@ -86,9 +81,8 @@ class MenuScene extends Phaser.Scene {
 
   clickCredits() {
     this.sound.play("guiSelect");
-    this.scene.start("creditsScene")
+    this.scene.start("creditsScene");
   }
-      
 }
 
 export default MenuScene;
