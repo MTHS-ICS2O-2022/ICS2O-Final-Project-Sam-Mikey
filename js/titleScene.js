@@ -2,11 +2,11 @@
 
 // Created by Mikey Gloriani
 // Created on January 12 2023
-// This is the splash scene
+// This is the title scene
 
-class SplashScene extends Phaser.Scene {
+class TitleScene extends Phaser.Scene {
   constructor() {
-    super({ key: "splashScene" });
+    super({ key: "titleScene" });
 
     this.titleSceneBackgroundImage = null;
     this.titleSceneText = null;
@@ -31,7 +31,7 @@ class SplashScene extends Phaser.Scene {
 
   create(data) {
     this.titleSceneBackgroundImage = this.add
-      .sprite(0, 0, "titleSceneBackground")
+      .sprite(1000, 500, "titleSceneBackground")
       .setScale(2.75);
     this.titleSceneBackgroundImage.x = 1920 / 2;
     this.titleSceneBackgroundImage.y = 1080 / 2;
@@ -51,4 +51,4 @@ class SplashScene extends Phaser.Scene {
   }
 }
 
-export default SplashScene;
+export default TitleScene;
