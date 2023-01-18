@@ -36,15 +36,18 @@ class ControlsScene extends Phaser.Scene {
     console.log("Controls Scene");
 
     //images
-    this.load.image("controlsSceneBackground", "./assets/menuSceneBackground.jpg");
+    this.load.image(
+      "controlsSceneBackground",
+      "./assets/menuSceneBackground.jpg"
+    );
 
     this.load.image("startGUIButton", "./assets/startGUIButton.png");
 
     this.load.image("backGUIButton", "./assets/backGUIButton.png");
 
     this.load.image("shipButton", "./assets/spaceShip.png");
-    
-    this.load.image("asteroidButton", "./assets/largeAsteroid.png")
+
+    this.load.image("asteroidButton", "./assets/largeAsteroid.png");
 
     //sounds
     this.load.audio("guiSelect", "./assets/guiSelect.mp3");
@@ -81,19 +84,15 @@ class ControlsScene extends Phaser.Scene {
     this.backGUIButton.setInteractive({ useHandCursor: true });
     this.backGUIButton.on("pointerdown", () => this.clickBack());
 
-    this.shipKeyboard = this.add.sprite(
-      960 / 2,
-      1080 / 2 + 50,
-      "shipButton"
-    ).setScale(3);
+    this.shipKeyboard = this.add
+      .sprite(960 / 2, 1080 / 2 + 50, "shipButton")
+      .setScale(3);
     this.shipKeyboard.setInteractive({ useHandCursor: true });
     this.shipKeyboard.on("pointerdown", () => this.keyboardControls());
 
-    this.asteroidMouse = this.add.sprite(
-      3000 / 2,
-      1080 / 2 + 50,
-      "asteroidButton"
-    ).setScale(2);
+    this.asteroidMouse = this.add
+      .sprite(3000 / 2, 1080 / 2 + 50, "asteroidButton")
+      .setScale(2);
     this.asteroidMouse.setInteractive({ useHandCursor: true });
     this.asteroidMouse.on("pointerdown", () => this.mouseControls());
   }
@@ -111,7 +110,7 @@ class ControlsScene extends Phaser.Scene {
   }
 
   keyboardControls() {
-    this.setTint(0xff0000)
+    this.setTint(0xff0000);
   }
 }
 
