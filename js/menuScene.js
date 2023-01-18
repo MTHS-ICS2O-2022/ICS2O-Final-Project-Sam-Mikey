@@ -76,7 +76,7 @@ class MenuScene extends Phaser.Scene {
 
   clickPlay() {
     this.sound.play("guiSelect");
-    this.scene.start("gameModeScene");
+    this.scene.start("controlsScene");
   }
 
   clickCredits() {
