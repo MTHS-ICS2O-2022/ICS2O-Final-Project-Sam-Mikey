@@ -11,6 +11,7 @@ import TitleScene from "./titleScene.js";
 import MenuScene from "./menuScene.js";
 import CreditsScene from "./creditsScene.js";
 import ControlsScene from "./controlsScene.js";
+import GameScene from "./gameScene.js"
 
 //Game Scenes
 const splashScene = new SplashScene();
@@ -18,6 +19,7 @@ const titleScene = new TitleScene();
 const menuScene = new MenuScene();
 const creditsScene = new CreditsScene();
 const controlsScene = new ControlsScene();
+const gameScene = new GameScene()
 
 const config = {
   type: Phaser.AUTO,
@@ -47,6 +49,7 @@ game.scene.add("titleScene", titleScene);
 game.scene.add("menuScene", menuScene);
 game.scene.add("creditsScene", creditsScene);
 game.scene.add("controlsScene", controlsScene);
+game.scene.add("gameScene", gameScene)
 
 // Game Start
 game.scene.start("splashScene");

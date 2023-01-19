@@ -11,7 +11,7 @@ class CreditsScene extends Phaser.Scene {
 
     this.creditsSceneText = null;
     this.creditsSceneTextStyle = {
-      font: "150px Times",
+      font: "100px Times",
       fill: "#ffffff",
       align: "center",
     };
@@ -46,9 +46,21 @@ class CreditsScene extends Phaser.Scene {
     this.creditsSceneBackgroundImage.y = 1080 / 2;
 
     this.creditsSceneText = this.add.text(
-      950 / 2,
+      1000 / 2,
       1080 / 2 - 250,
-      "Insert Text Here",
+      "Dev Team",
+      this.creditsSceneTextStyle
+    );
+    this.add.text(
+      1000 / 2,
+      1080 / 2 - 100,
+      "-Sam Corbett",
+      this.creditsSceneTextStyle
+    );
+      this.add.text(
+      1000 / 2,
+      1080 / 2 + 25,
+      "-Mikey Gloriani",
       this.creditsSceneTextStyle
     );
 
