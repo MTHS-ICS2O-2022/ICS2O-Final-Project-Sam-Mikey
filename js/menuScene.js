@@ -68,11 +68,7 @@ class MenuScene extends Phaser.Scene {
     this.creditsGUIButton.on("pointerdown", () => this.clickCredits());
   }
 
-  update(time, delta) {
-    if (time > 6000) {
-      this.scene.switch("gameScene");
-    }
-  }
+  update(time, delta) {}
 
   clickPlay() {
     this.sound.play("guiSelect");
