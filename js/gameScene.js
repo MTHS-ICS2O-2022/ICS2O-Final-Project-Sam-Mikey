@@ -1,10 +1,23 @@
 /* global Phaser */
 
 // Created by Mikey Gloriani
+// Edited with Sam Corbett
 // Created on January 12 2023
-// This is the splash scene
+// This is the game scene
 
 class GameScene extends Phaser.Scene {
+   createAsteroid() {
+    const asteroidXLocation = Math.floor(Math.random() * 1920) + 1;
+    let asteroidXVelocity = Math.floor(Math.random() * 50) + 1;
+    asteroidXVelocity *= Math.round(Math.random()) ? 1 : -1;
+    const aLargeAsteroid = this.physics.add.sprite(asteroidXLocation, -100, "largeAsteroid");
+    aLargeAsteroid.body.velocity.y = 100;
+    aLargeAsteroid.body.velocity.x = asteroidXVelocity;
+    this.asteroidGroup.add(aLargeAsteroid);
+     if (asteroidXLocation < 0) {
+       this.createAsteroid = Math.floor(Math.random() * 1920) + 1
+     }
+   }
   constructor() {
     super({ key: "gameScene" });
 
@@ -23,14 +36,14 @@ class GameScene extends Phaser.Scene {
     //images
     this.load.image("gameSceneBackground", "./assets/gameSceneBackground.png");
     this.load.image("spaceShip", './assets/spaceShip.png');
+    this.load.image("largeAsteroid", './assets/largeAsteroid.png');
     this.load.image('bullet', './assets/bullet.png');
-    this.load.image("spaceShipUp", './assets/spaceShipUp.png')
-    this.load.image("spaceShipDown", './assets/spaceShipDown.png')
-    this.load.image("spaceShipLeft", './assets/spaceShipLeft.png')
-    this.load.image("spaceShipRight", './assets/spaceShipRight.png')
     
     //sound
     this.load.audio('laser', "assets/laser.mp3")
+    this.load.audio('asteroidExplosion', "assets/asteroidExplosion.wav")
+    this.load.audio('extraLife', "assets/extraLife.mp3")
+    this.load.audio('spaceShipExplosion', "assets/spaceShipExplosion.wav")
   }
 
   create(data) {
@@ -43,6 +56,9 @@ class GameScene extends Phaser.Scene {
 
     this.missleGroup = this.physics.add.group()
 
+    this.asteroidGroup = this.add.group();
+    this.createAsteroid();
+    
     //ship
     this.ship = this.physics.add.sprite( 1920 / 2, 1080 - 100, "spaceShip")
   }
@@ -83,9 +99,11 @@ class GameScene extends Phaser.Scene {
     }
 
     if (keySpaceObj.isDown === true){
-       const aNewMissile = this.physics.add.sprite(this.ship.x, this.ship.y, 'bullet')
+      if (this.fireMissile === false){
+        const aNewMissile = this.physics.add.sprite(this.ship.x, this.ship.y, 'bullet')
       this.missleGroup.add(aNewMissile);
       this.sound.play("laser");
+      }
     }
     
     if (keySpaceObj.isUp === true) {
