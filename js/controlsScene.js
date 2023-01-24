@@ -1,8 +1,9 @@
 /* global Phaser */
 
 // Created by Sam Corbett
+// Edited With Mikey Gloriani
 // Created on January 13 2023
-// This is the scene where you select either mouse or keyboard to play.
+// This is the scene before you play the game.
 
 class ControlsScene extends Phaser.Scene {
   constructor() {
@@ -30,7 +31,7 @@ class ControlsScene extends Phaser.Scene {
     //images
     this.load.image(
       "controlsSceneBackground",
-      "./assets/controlsimage.png"
+      "./assets/controlsSceneBackground.png"
     );
 
     this.load.image("startGUIButton", "./assets/startGUIButton.png");
@@ -45,7 +46,7 @@ class ControlsScene extends Phaser.Scene {
   create(data) {
     this.controlsModeSceneBackgroundImage = this.add
       .sprite(1000, 500, "controlsSceneBackground")
-      .setScale(1);
+      .setScale(1.25);
     this.controlsModeSceneBackgroundImage.x = 1920 / 2;
     this.controlsModeSceneBackgroundImage.y = 1080 / 2;
 
